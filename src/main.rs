@@ -19,7 +19,7 @@ fn main() {
 
         // Check the player's response
         if play_again.trim().to_lowercase() != "y" {
-            println!("Thanks for playing yo!");
+            println!("Thanks for playing dude!");
             break;
         }
     }
