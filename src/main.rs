@@ -6,10 +6,7 @@ fn main() {
     println!("Welcome to the Guessing Game!");
 
     loop {
-        // Call the game function
         play_game();
-
-        // Ask the player if they want to play again
         println!("Do you want to play again? (y/n)");
 
         let mut play_again = String::new();
@@ -17,7 +14,6 @@ fn main() {
             .read_line(&mut play_again)
             .expect("Failed to read line");
 
-        // Check the player's response
         if play_again.trim().to_lowercase() != "y" {
             println!("Thanks for playing dude!");
             break;
@@ -28,8 +24,7 @@ fn main() {
 fn play_game() {
     println!("I'm thinking of a number between 1 and 100.");
 
-    // Generate a random number between 1 and 100
-    let secret_number = rand::thread_rng().gen_range(1..=100);
+    let secret_number = rand::thread_rng().gen_range(1..=100); //inclusive
 
     // Initialize the guess counter
     let mut guess_count = 0;
@@ -37,10 +32,8 @@ fn play_game() {
     loop {
         println!("Please input your guess.");
 
-        // Increment the guess counter
         guess_count += 1;
 
-        // Create a mutable String to store the user's input
         let mut guess = String::new();
 
         // Read the user's input and handle any errors
